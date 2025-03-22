@@ -1,8 +1,8 @@
-# oa-api
+# transport-sys-egg
 
 ## 描述
 
-oa-api 为前后端分离的物流管理系统。
+transport-sys-egg为前后端分离的物流管理系统。
 
 ## 技术栈
 
@@ -23,8 +23,8 @@ MySQL数据库
 **项目有两个分支，master分支包含一个后台管理系统的基础功能，feature-oa分支除了系统管理外还包含基础数据，财务数据，审核管理等模块**
 
 ```bash
-git clone https://gitee.com/caiheping/oa-api.git
-cd oa-api
+git clone https://gitee.com/caiheping/transport-sys-egg.git
+cd transport-sys-egg
 npm install
 ```
 
@@ -49,7 +49,7 @@ feature-oa分支运行：在egg-oa-sys数据库下导入项目根目录下 egg-o
 ### 目录结构
 
 ```bash
-oa-api
+transport-sys-egg
 ├─ apidoc					// 接口文档
 ├─ app
 |	├─ controller			// 用于解析用户的输入，处理后返回相应的结果
