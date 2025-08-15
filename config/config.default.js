@@ -86,7 +86,7 @@ module.exports = appInfo => {
     dialect: 'mysql',
     host: '127.0.0.1',
     port: 3306,
-    password: 'root', // 数据库密码
+    password: '1234', // 数据库密码
     database: 'egg-oa-sys',
     timezone: '+8:00', // 由于orm用的UTC时间，这里必须加上东八区，否则取出来的时间相差8小时
     define: { // model的全局配置
