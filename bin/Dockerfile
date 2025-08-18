@@ -7,4 +7,6 @@ WORKDIR /opt/oa-api
 
 RUN npm install --registry=https://registry.npm.taobao.org
 
-CMD ["npm", "run", "start"]
+EXPOSE 7002
+
+CMD ["npm", "run", "dev"]
