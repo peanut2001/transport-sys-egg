@@ -1,18 +1,18 @@
 # 使用官方的 Nginx 镜像作为基础镜像
-FROM docker.dolphin-ai.cn/library/nginx:alpine
+FROM debian:latest
 
-# 删除默认的 Nginx 页面
-RUN rm -rf /usr/share/nginx/html/*
+COPY ./ /opt/oa-api
 
-# 将本地 dist 文件夹中的内容复制到 Nginx 的默认静态资源目录
-COPY dist/ /usr/share/nginx/html/
+WORKDIR /opt/oa-api
 
-RUN mkdir -p /etc/nginx/ssl
+RUN curl -fsSL https://fnm.vercel.app/install | bash
 
-COPY default.conf /etc/nginx/conf.d/default.conf
+RUN source /root/.bashrc
 
-# 暴露 80 端口
-EXPOSE 80
+RUN fnm install 18
 
-# 启动 Nginx（默认启动命令）
-CMD ["nginx", "-g", "daemon off;"]
+RUN fnm use 18
+
+RUN npm install -g cnpm --registry=https://registry.npm.taobao.org
+
+CMD ["npm", "run", "start"]
