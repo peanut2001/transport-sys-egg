@@ -3,7 +3,7 @@ FROM node:18-alpine
 
 WORKDIR /opt/oa-api
 
-COPY ./ /opt/oa-api
+COPY ../ /opt/oa-api
 
 RUN ls
 
