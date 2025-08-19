@@ -1,0 +1,17 @@
+services:
+  mysql:
+    image: docker.dolphin-ai.cn/dolphin/dolphin-mysql:9.2.0
+    restart: always
+    environment:
+      - MYSQL_INITDB_SKIP_TZINFO=Asia/Shanghai
+      - MYSQL_ROOT_PASSWORD=1234
+      - MYSQL_DATABASE=egg-oa-sys
+    ports:
+      - 3306:3306
+  oa-api:
+    image: docker.dolphin-ai.cn/library/oa-api:latest
+    restart: always
+    environment:
+      - TZ=Asia/Shanghai
+    ports:
+      - 7002:7002
