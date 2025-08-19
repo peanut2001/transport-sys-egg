@@ -84,7 +84,7 @@ module.exports = appInfo => {
 
   config.sequelize = {
     dialect: 'mysql',
-    host: '127.0.0.1',
+    host: 'localhost',
     port: 3306,
     username: 'root', // 数据库用户名
     password: '1234', // 数据库密码
