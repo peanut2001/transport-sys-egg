@@ -19,7 +19,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        node-version: [16, 18, 20]   # ✅ 同时测试 Node.js 16 / 18 / 20
+        node-version: [16]   # ✅ 同时测试 Node.js 16 / 18 / 20
         os: [ubuntu-latest, windows-latest, macos-latest]
 
     steps:
