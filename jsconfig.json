@@ -1,4 +1,10 @@
 {
+  "compilerOptions": {
+    "types": []
+  },
+  "typeAcquisition": {
+    "enable": false
+  },
   "include": [
     "**/*"
   ]

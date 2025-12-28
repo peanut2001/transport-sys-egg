@@ -669,3 +669,38 @@ CREATE TABLE `warehouses` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='仓库管理';
 
+-- ----------------------------
+-- 入库管理表
+-- ----------------------------
+DROP TABLE IF EXISTS `inbounds`;
+CREATE TABLE `inbounds` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `inboundNo` varchar(32) NOT NULL COMMENT '入库单号',
+  `warehouseName` varchar(50) NOT NULL COMMENT '仓库名称',
+  `cargoName` varchar(100) NOT NULL COMMENT '货物名称',
+  `cargoType` varchar(50) DEFAULT NULL COMMENT '货物类型',
+  `quantity` int(11) NOT NULL DEFAULT '0' COMMENT '数量',
+  `unit` varchar(10) DEFAULT '件' COMMENT '单位',
+  `supplier` varchar(100) DEFAULT NULL COMMENT '供应商',
+  `status` varchar(1) NOT NULL DEFAULT '1' COMMENT '状态（1已入库 0待入库）',
+  `inboundTime` datetime DEFAULT NULL COMMENT '入库时间',
+  `remark` varchar(255) DEFAULT NULL COMMENT '备注',
+  `createdAt` datetime DEFAULT NULL,
+  `createdBy` varchar(255) DEFAULT NULL,
+  `updatedAt` datetime DEFAULT NULL,
+  `updatedBy` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `uk_inbound_no` (`inboundNo`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='入库管理';
+
+-- ----------------------------
+-- Records of inbounds
+-- ----------------------------
+INSERT INTO `inbounds` VALUES
+(1, 'IN20240320001', '深圳一号仓', '笔记本电脑', '电子产品', 120, '台', '深圳拓达电子', '1', '2024-03-20 10:30:00', '首批到货', '2024-03-20 10:30:00', 'admin', NULL, NULL),
+(2, 'IN20240320002', '深圳一号仓', '医用口罩', '医疗设备', 5000, '盒', '华南医疗', '1', '2024-03-20 14:15:00', '紧急入库', '2024-03-20 14:15:00', 'admin', NULL, NULL),
+(3, 'IN20240321001', '广州二号仓', '茶叶礼盒', '食品', 800, '箱', '岭南供应链', '1', '2024-03-21 09:20:00', NULL, '2024-03-21 09:20:00', 'admin', NULL, NULL),
+(4, 'IN20240321002', '广州二号仓', '办公椅', '家具', 260, '把', '广大家居', '0', '2024-03-21 16:40:00', '待验收入库', '2024-03-21 16:40:00', 'admin', NULL, NULL),
+(5, 'IN20240322001', '上海三号仓', '洗护套装', '日用品', 1500, '件', '沪上日化', '1', '2024-03-22 11:05:00', NULL, '2024-03-22 11:05:00', 'admin', NULL, NULL),
+(6, 'IN20240322002', '上海三号仓', '服务器机柜', '电子产品', 45, '台', '星云科技', '0', '2024-03-22 15:50:00', '待入库排期', '2024-03-22 15:50:00', 'admin', NULL, NULL);
+

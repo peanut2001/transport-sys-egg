@@ -92,4 +92,12 @@ module.exports = app => {
     put: 'system:warehouse:update',
     delete: 'system:warehouse:delete',
   }), controller[app.config.public].admin.system.warehouse);
+
+  // 入库管理路由
+  router.resources('inbound', `/api/${app.config.public}/admin/system/inbound`, app.middleware.auth({
+    get: 'system:inbound:list',
+    post: 'system:inbound:add',
+    put: 'system:inbound:update',
+    delete: 'system:inbound:delete',
+  }), controller[app.config.public].admin.system.inbound);
 };
