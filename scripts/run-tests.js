@@ -41,5 +41,4 @@ const result = spawnSync('egg-bin', [ 'test' ], { stdio: 'inherit', shell: true 
 if (result.error) {
   console.error(result.error)
 }
-
-process.exit(result.status ?? 1)
+process.exit(result.status !== undefined ?  result.status : 1)
