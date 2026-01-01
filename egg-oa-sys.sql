@@ -394,6 +394,7 @@ INSERT INTO `sequelizemeta` VALUES ('20210608025759-create-role-menu.js');
 INSERT INTO `sequelizemeta` VALUES ('20210608025759-create-roles.js');
 INSERT INTO `sequelizemeta` VALUES ('20210608025759-create-user-role.js');
 INSERT INTO `sequelizemeta` VALUES ('20210608025759-init-users.js');
+INSERT INTO `sequelizemeta` VALUES ('20250313000000-create-inbounds.js');
 
 -- ----------------------------
 -- Table structure for user_roles
