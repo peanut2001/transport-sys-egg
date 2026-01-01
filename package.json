@@ -37,7 +37,7 @@
     "dev": "egg-bin dev",
     "debug": "egg-bin debug",
     "test": "npm run lint -- --fix && npm run test-local",
-    "test-local": "egg-bin test",
+    "test-local": "node scripts/run-tests.js",
     "cov": "egg-bin cov",
     "lint": "eslint . --fix",
     "ci": "npm run lint && npm run cov",
